@@ -1,4 +1,8 @@
+require './checks.rb'
+
 class Guesser
+  include Checks
+  
   def initialize 
     @guess_string = ""
     @guess_array = []
