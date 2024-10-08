@@ -28,4 +28,11 @@ module Checks
       rc_wp_count += code_count >= guess_count ? guess_count : code_count
     end
   end
+
+  def print_hint(rc_rp_count, rc_wp_count)
+    print "hint:"
+    rc_rp_count.times {print " r"} 
+    rc_wp_count.times {print " w"}
+    puts ""
+  end 
 end
