@@ -20,11 +20,8 @@ module Checks
   def count_rc_wp(filtered_code, filtered_guess)
     all_colors = ["R", "Y", "G", "U", "W", "B"]
     all_colors.reduce(0) do |rc_wp_count, color|
-      if filtered_code.count(color) >= filtered_guess.count(color)
-        rc_wp_count += filtered_guess.count(color)
-      else
-        rc_wp_count += filtered_code.count(color)
-      end
+      code_count, guess_count = filtered_code.count(color), filtered_guess.count(color)
+      rc_wp_count += code_count >= guess_count ? guess_count : code_count
     end
   end
 end
