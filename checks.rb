@@ -10,4 +10,10 @@ module Checks
     end
     rc_rp_indexes
   end
+
+  def remove_elements_by_index(array, indexes)
+    array.select.with_index do |_, index|
+       !indexes.include?(index)
+    end
+  end
 end
