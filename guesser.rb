@@ -3,10 +3,10 @@ require './checks.rb'
 class Guesser
   include Checks
   
-  attr_reader :guess_array
+  attr_reader :guess
   def initialize 
     @guess_string = ""
-    @guess_array = []
+    @guess = []
   end 
 
   def get_guess
@@ -15,7 +15,7 @@ class Guesser
   end
 
   def format_guess(guess_string)
-    @guess_array =  guess_string.split
+    @guess =  guess_string.split
   end
 
   def make_guess
