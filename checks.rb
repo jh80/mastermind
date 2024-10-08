@@ -19,11 +19,12 @@ module Checks
 
   def count_rc_wp(filtered_code, filtered_guess)
     all_colors = ["R", "Y", "G", "U", "W", "B"]
-    rc_wp_count = 0
-    all_colors.each do |color|
-      next if filtered_code.count(color).zero? 
-      rc_wp_count += filtered_code.count(color) >= filtered_guess.count(color) ? filtered_guess.count(color) : filtered_code.count(color)
+    all_colors.reduce(0) do |rc_wp_count, color|
+      if filtered_code.count(color) >= filtered_guess.count(color)
+        rc_wp_count += filtered_guess.count(color)
+      else
+        rc_wp_count += filtered_code.count(color)
+      end
     end
-    rc_wp_count
   end
 end
