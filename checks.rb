@@ -17,6 +17,10 @@ module Checks
     end
   end
 
+  def calculate_rp_rc_count(guess_array, filtered_guess)
+    guess_array.length - filtered_guess.length
+  end
+
   def count_rc_wp(filtered_code, filtered_guess)
     all_colors = ["R", "Y", "G", "U", "W", "B"]
     all_colors.reduce(0) do |rc_wp_count, color|
