@@ -1,4 +1,6 @@
 class Game
+  attr_reader :code_maker
+
   def initialize
     @guesser = Guesser.new
     @code_maker = CodeMaker.new
