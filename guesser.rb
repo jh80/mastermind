@@ -15,7 +15,7 @@ class Guesser
   end
 
   def format_guess(guess_string)
-    @guess =  guess_string.split
+    @guess =  guess_string.upcase.split("")
   end
 
   def make_guess
