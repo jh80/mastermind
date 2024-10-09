@@ -9,15 +9,16 @@ class Game
   end
 
   def play
-    # Code is created during initialization phase when code_maker instance is created
-    @guess_max.times do 
+    code_maker.generate_code
+    @guess_max.times do |round|
       if @rc_rp == @code_maker.code.length
         puts "Congratultions the code was #{@code_maker.code} and you guessed it!"
         break
       end
       @guesser.make_guess
       @rc_rp = @code_maker.evaluate_guess(@guesser.guess)
+      puts "Sorry, you ran out of guesses" if round == 11
     end
-    puts "Sorry, you ran out of guesses"
+   
   end
 end
