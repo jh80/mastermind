@@ -5,9 +5,9 @@ class CodeMaker
 
   # TO DO take out: Just for testing
   attr_reader :code
-  def initialize
-    @code = ["R", "U", "G", "R"]
+  def initialize()
     @code_length = 4
+    @code = generate_code
   end
 
   def generate_code
