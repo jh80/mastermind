@@ -17,7 +17,7 @@ class Game
       end
       @guesser.make_guess
       @rc_rp = @code_maker.evaluate_guess(@guesser.guess)
-      puts "Sorry, you ran out of guesses" if round == 11
+      puts "Sorry, you ran out of guesses" if round == @guess_max - 1
     end
    
   end
