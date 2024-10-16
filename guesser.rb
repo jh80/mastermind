@@ -1,15 +1,17 @@
 require './checks.rb'
 require './user_compliance.rb'
+require './inputable'
 
 class Guesser
   include Checks
   include UserCompliance
+  include Inputable
 
   attr_reader :guess
   def initialize 
     @guess_string = ""
     @guess = []
-    @guesser = false
+    @guesser_type = false
   end 
 
   def get_guess
@@ -25,5 +27,9 @@ class Guesser
   def make_guess
     @guess_string = get_guess
     @guess = format_string(@guess_string)
+  end
+
+  def set_guesser_type
+    @guesser_type = get_player_type("Who will be guessing? Human or computer?")
   end
 end
