@@ -1,13 +1,13 @@
 module UserCompliance
-  def code_format_issue?(guess)
-    if !all_chars_valid?(guess)
+  def code_format_issue?(code, code_type = "guess")
+    if !all_chars_valid?(code)
       puts "The available letters to represent the colors are: R Y G U B W"
       return true
-    elsif guess.length > 4
-      puts "Your guess is too long, it should only be 4 characters. Remember not to use spaces."
+    elsif code.length > 4
+      puts "Your #{code_type} is too long, it should only be 4 characters. Remember not to use spaces."
       return true
-    elsif guess.length < 4
-      puts "Your guess is not longe enough, use 4 letters"
+    elsif code.length < 4
+      puts "Your #{code_type} is not longe enough, use 4 letters"
       return true
     end
     return false

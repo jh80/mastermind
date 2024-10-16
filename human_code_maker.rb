@@ -8,7 +8,7 @@ module HumanCodeMaker
     loop do
       puts "Please enter your code below:"
       code = gets.chomp
-      break unless code_format_issue?(code)
+      break unless code_format_issue?(code, "code")
     end
   end
 end
