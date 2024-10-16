@@ -27,4 +27,8 @@ module UserCompliance
       puts "You must choose human or computer."
     end
   end
+
+  def format_string(user_string)
+    user_string.upcase.split("")
+  end
 end
