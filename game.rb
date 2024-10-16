@@ -35,7 +35,7 @@ class Game
     @guesser.set_guesser_type
     @guess_max.times do |round|
       if @rc_rp == @code_maker.code.length
-        puts "Congratultions the code was #{@code_maker.code} and you guessed it!"
+        puts "Congratultions the code was #{@code_maker.code} and you guessed it in #{round} guesses!"
         break
       end
       guess = @guesser.set_guess
