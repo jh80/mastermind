@@ -9,7 +9,7 @@ class Game
     @guesser = Guesser.new
     @code_maker = CodeMaker.new
     @rc_rp = 0
-    @guess_max = 12
+    @guess_max = 10000
   end
 
   def give_instructions
@@ -35,7 +35,7 @@ class Game
     @guesser.set_guesser_type
     @guess_max.times do |round|
       if @rc_rp == @code_maker.code.length
-        puts "Congratultions the code was #{@code_maker.code} and you guessed it in #{round} guesses!"
+        puts "Congratultions the code was #{@code_maker.code.join} and you guessed it in #{round} guesses!"
         break
       end
       guess = @guesser.set_guess
