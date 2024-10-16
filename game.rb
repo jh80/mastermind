@@ -40,7 +40,8 @@ class Game
       end
       guess = @guesser.set_guess
       print "guess: #{guess.join}  "
-      @rc_rp = @code_maker.evaluate_guess(@guesser.guess)
+      results = @code_maker.evaluate_guess(@guesser.guess)
+      @rc_rp = results[:rc_rp]
       puts "Sorry, you ran out of guesses" if round == @guess_max - 1
     end
   end

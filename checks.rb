@@ -44,6 +44,6 @@ module Checks
     rc_rp_count = calculate_rp_rc_count(guess, filtered_guess)
     rc_wp_count = count_rc_wp(filtered_code, filtered_guess)
     print_hint(rc_rp_count, rc_wp_count)
-    rc_rp_count
+    {rc_rp: rc_rp_count, rc_wp: rc_wp_count}
   end
 end
