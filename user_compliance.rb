@@ -12,4 +12,11 @@ module UserCompliance
     end
     return false
   end
+
+  def all_chars_valid?(guess)
+    all_colors = ["R", "Y", "G", "U", "W", "B"]
+    all_chars_valid = true
+    guess.upcase.each_char { |char| all_chars_valid = false unless all_colors.include?(char)}
+    all_chars_valid
+  end
 end
