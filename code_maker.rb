@@ -27,7 +27,7 @@ class CodeMaker
     loop do
       puts "Who will make the code? Human or Computer?"
       code_maker = gets.chomp.downcase
-      break unless !code_maker_valid?(code_maker)
+      break unless !player_type_valid?(code_maker)
     end 
     code_maker
   end

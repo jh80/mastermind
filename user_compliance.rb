@@ -20,8 +20,8 @@ module UserCompliance
     all_chars_valid
   end
 
-  def code_maker_valid?(code_maker)
-    if code_maker == "human" || code_maker == "computer"
+  def player_type_valid?(player_type)
+    if player_type == "human" || code_maker == "computer"
       return true
     else
       puts "You must choose human or computer."
