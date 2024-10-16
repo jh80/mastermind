@@ -1,7 +1,9 @@
 require "./checks.rb"
+require './human_code_maker.rb'
 
 class CodeMaker
   include Checks
+  include HumanCodeMaker
 
   # TO DO take out: Just for testing
   attr_reader :code
