@@ -1,8 +1,10 @@
 require './checks.rb'
+require './user_compliance.rb'
 
 class Guesser
   include Checks
-  
+  include UserCompliance
+
   attr_reader :guess
   def initialize 
     @guess_string = ""
