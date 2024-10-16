@@ -31,7 +31,7 @@ class Game
 
   def play
     give_instructions
-    code_maker.generate_code
+    code_maker.set_code
     @guess_max.times do |round|
       if @rc_rp == @code_maker.code.length
         puts "Congratultions the code was #{@code_maker.code} and you guessed it!"

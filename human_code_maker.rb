@@ -10,5 +10,6 @@ module HumanCodeMaker
       code = gets.chomp
       break unless code_format_issue?(code, "code")
     end
+    format_string(code)
   end
 end

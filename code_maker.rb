@@ -9,7 +9,8 @@ class CodeMaker
   attr_reader :code
   def initialize()
     @code_length = 4
-    @code = generate_code
+    @code = []
+    @code_maker_type = false
   end
 
   def generate_code
@@ -29,5 +30,14 @@ class CodeMaker
       break unless !code_maker_valid?(code_maker)
     end 
     code_maker
+  end
+
+  def set_code_maker_type
+    @code_maker_type = choose_code_maker
+  end
+
+  def set_code
+    set_code_maker_type
+    @code = @code_maker_type == "computer" ? generate_code : get_human_code
   end
 end

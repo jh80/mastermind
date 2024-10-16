@@ -6,8 +6,10 @@ require './game.rb'
 
 
 game = Game.new
+
 game.play
 
+# code_maker = game.code_maker.choose_code_maker
 # guesser = Guesser.new()
 # code_maker = CodeMaker.new()
 # guesser.make_guess
