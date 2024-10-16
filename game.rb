@@ -3,11 +3,12 @@ require './user_compliance'
 class Game
   include UserCompliance
 
-  attr_reader :code_maker
+  attr_reader :code_maker, :real_world
 
   def initialize
     @guesser = Guesser.new
     @code_maker = CodeMaker.new
+    @real_world = World.new
     @rc_rp = 0
     @guess_max = 10000
   end
@@ -42,6 +43,7 @@ class Game
       print "guess: #{guess.join}  "
       results = @code_maker.evaluate_guess(@guesser.guess)
       @rc_rp = results[:rc_rp]
+      @real_world.add_rule(guess, results[:rc_rp], results[:rc_wp])
       puts "Sorry, you ran out of guesses" if round == @guess_max - 1
     end
   end

@@ -3,11 +3,13 @@ require './guesser.rb'
 require './code_maker.rb'
 require './checks.rb'
 require './game.rb'
+require './world.rb'
 
 
 game = Game.new
-
-game.play
+real_world = World.new
+p real_world.available_colors_collection
+#game.play
 
 # code_maker = game.code_maker.choose_code_maker
 # guesser = Guesser.new()
