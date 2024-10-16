@@ -1,4 +1,8 @@
+require './user_compliance'
+
 class Game
+  include UserCompliance
+
   attr_reader :code_maker
 
   def initialize
@@ -23,6 +27,16 @@ class Game
 
       Have fun!\n
     RUBY
+  end
+
+  def choose_code_maker
+    code_maker = "none"
+    loop do
+      puts "Who will make the code? Human or Computer?"
+      code_maker = gets.chomp.downcase
+      break unless !code_maker_valid?(code_maker)
+    end 
+    code_maker
   end
 
   def play
