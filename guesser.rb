@@ -14,7 +14,7 @@ class Guesser
     loop do
       puts "What is your guess?"
       guess = gets.chomp
-      break unless guess_issue?(guess)
+      break unless code_format_issue?(guess)
     end
     guess
   end
@@ -35,7 +35,7 @@ class Guesser
     all_chars_valid
   end
 
-  def guess_issue?(guess)
+  def code_format_issue?(guess)
     if !all_chars_valid?(guess)
       puts "The available letters to represent the colors are: R Y G U B W"
       return true
