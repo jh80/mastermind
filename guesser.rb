@@ -9,6 +9,7 @@ class Guesser
   def initialize 
     @guess_string = ""
     @guess = []
+    @guesser = false
   end 
 
   def get_guess
@@ -21,12 +22,8 @@ class Guesser
     guess
   end
 
-  def format_guess(guess_string)
-    @guess =  guess_string.upcase.split("")
-  end
-
   def make_guess
     @guess_string = get_guess
-    format_guess(@guess_string)
+    @guess = format_string(@guess_string)
   end
 end
