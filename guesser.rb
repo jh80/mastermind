@@ -1,11 +1,13 @@
 require './checks.rb'
 require './user_compliance.rb'
 require './inputable'
+require './computer_intelligence'
 
 class Guesser
   include Checks
   include UserCompliance
   include Inputable
+  include ComputerIntelligence
 
   attr_reader :guess
   def initialize 
@@ -24,9 +26,8 @@ class Guesser
     guess
   end
 
-  def make_guess
-    @guess_string = get_guess
-    @guess = format_string(@guess_string)
+  def set_guess
+    @guess = @guesser_type == "human" ? format_string(get_guess) : generate_code(4) 
   end
 
   def set_guesser_type

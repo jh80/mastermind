@@ -38,7 +38,7 @@ class Game
         puts "Congratultions the code was #{@code_maker.code} and you guessed it!"
         break
       end
-      @guesser.make_guess
+      @guesser.set_guess
       @rc_rp = @code_maker.evaluate_guess(@guesser.guess)
       puts "Sorry, you ran out of guesses" if round == @guess_max - 1
     end
