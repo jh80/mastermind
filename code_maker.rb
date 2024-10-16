@@ -25,7 +25,7 @@ class CodeMaker
   end
 
   def set_code_maker_type
-    @code_maker_type = choose_player_type
+    @code_maker_type = get_player_type("Who will make the code? Human or Computer?")
   end
 
   def set_code

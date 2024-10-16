@@ -1,11 +1,11 @@
 module Inputable
-  def choose_player_type
-    code_maker = "none"
+  def get_player_type(request_message)
+    player_type = "none"
     loop do
-      puts "Who will make the code? Human or Computer?"
-      code_maker = gets.chomp.downcase
-      break unless !player_type_valid?(code_maker)
+      puts request_message
+      player_type = gets.chomp.downcase
+      break unless !player_type_valid?(player_type)
     end 
-    code_maker
+    player_type
   end
 end
