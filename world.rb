@@ -19,5 +19,11 @@ class World
         @available_colors_collection[i] = new
       end
     end
+    if (rule[:rc_rp] + rule[:rc_wp]) == 0
+      @available_colors_collection.each_with_index do |available_colors, i|
+        new = available_colors.select {|color| !rule[:guess].include?(color)}
+        @available_colors_collection[i] = new
+      end
+    end
   end
 end
