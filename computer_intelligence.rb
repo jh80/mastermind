@@ -7,4 +7,12 @@ module ComputerIntelligence
     end
     code
   end
+
+  def generate_code_from_color_lib(color_library)
+    code = []
+    color_library.each do |available_colors|
+      code.push(available_colors.sample)
+    end
+    code
+  end
 end

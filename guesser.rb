@@ -26,8 +26,8 @@ class Guesser
     guess
   end
 
-  def set_guess
-    @guess = @guesser_type == "human" ? format_string(get_guess) : generate_code(4) 
+  def set_guess(color_library)
+    @guess = @guesser_type == "human" ? format_string(get_guess) : generate_code_from_color_lib(color_library) 
   end
 
   def set_guesser_type
