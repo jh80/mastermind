@@ -12,12 +12,21 @@ module ComputerIntelligence
     loop do
       code = []
       if world.the_colors
-        return world.the_colors.shuffle
-      end
-      world.available_colors_collection.each do |available_colors|
+        code = world.the_colors.shuffle
+      else
+        world.available_colors_collection.each do |available_colors|
         code.push(available_colors.sample)
+        end 
       end
+      next unless uses_available_colors?(code, world.available_colors_collection)
       return code unless world.rules.any? { |rule| rule[:guess] == code }
     end
+  end
+
+  def uses_available_colors?(sequence, available_colors_collection)
+    sequence.each_with_index do |color, i|
+      return false unless available_colors_collection[i].include?(color)
+    end
+    return true
   end
 end

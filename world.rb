@@ -16,8 +16,17 @@ class World
   def process_results(rule)
     if (rule[:rc_rp] + rule[:rc_wp]) == 4
       @the_colors = rule[:guess]
-    end
-    if (rule[:rc_rp] + rule[:rc_wp]) == 0
+      @available_colors_collection.each_with_index do |available_colors, i|
+        new = available_colors.select {|color| rule[:guess].include?(color)}
+        @available_colors_collection[i] = new
+      end
+      if rule[:rc_wp] == 4
+        @available_colors_collection.each_with_index do |available_colors, i|
+          new = available_colors.select {|color| !(rule[:guess][i] == color)}
+          @available_colors_collection[i] = new
+        end
+      end
+    elsif (rule[:rc_rp] + rule[:rc_wp]) == 0
       @available_colors_collection.each_with_index do |available_colors, i|
         new = available_colors.select {|color| !rule[:guess].include?(color)}
         @available_colors_collection[i] = new
