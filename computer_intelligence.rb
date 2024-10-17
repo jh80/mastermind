@@ -8,12 +8,12 @@ module ComputerIntelligence
     code
   end
 
-  def generate_code_from_color_lib(color_library, the_colors)
+  def generate_code_from_color_lib(world)
     code = []
-    if the_colors
-      return the_colors.shuffle
+    if world.the_colors
+      return world.the_colors.shuffle
     end
-    color_library.each do |available_colors|
+    world.available_colors_collection.each do |available_colors|
       code.push(available_colors.sample)
     end
     code
