@@ -44,6 +44,7 @@ class Game
       results = @code_maker.evaluate_guess(@guesser.guess)
       @rc_rp = results[:rc_rp]
       @real_world.add_rule(guess, results[:rc_rp], results[:rc_wp])
+      @real_world.process_results(@real_world.rules[-1])
       puts "Sorry, you ran out of guesses" if round == @guess_max - 1
     end
   end
