@@ -11,7 +11,7 @@ module ComputerIntelligence
   def generate_code_from_color_lib(color_library, the_colors)
     code = []
     if the_colors
-      the_colors.sample(4)
+      return the_colors.shuffle
     end
     color_library.each do |available_colors|
       code.push(available_colors.sample)
