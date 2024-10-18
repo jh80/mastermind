@@ -17,7 +17,7 @@ class World
   end
 
   def add_rule(guess, rc_rp, rc_wp)
-    @rules << {guess: guess, rc_rp: rc_rp, rc_wp: rc_wp}
+    @rules << {guess: guess, rc_rp: rc_rp, rc_wp: rc_wp, rc_total: rc_rp + rc_wp}
   end
 
   def process_results(rule)
