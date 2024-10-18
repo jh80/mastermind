@@ -27,7 +27,7 @@ class Guesser
     guess
   end
 
-  def set_guess(world, round)
+  def set_guess(round, world)
     if @guesser_type == "human" 
       @guess = format_string(get_guess)
     else 

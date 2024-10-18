@@ -54,4 +54,19 @@ module ComputerIntelligence
   def computer_guess_standard(world)
     generate_code_from_color_lib(world)
   end
+
+  def generate_code_color_system(round, world)
+    rule = world.rules[-1]
+    if round == 0 
+      return Array.new(4, world.all_colors[0])
+    elsif rule[:rc_total] < 4
+      if rule[:rc_total] == 0
+        return Array.new(4, world.available_colors_collection[0][0])
+      else 
+        add_quant = 4 - rule[:rc_total]
+        return rule[:guess].slice(0, rule[:rc_total]) + Array.new(add_quant, world.all_colors[round])
+      end
+    end
+    generate_code_from_color_lib(world)
+  end
 end

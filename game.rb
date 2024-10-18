@@ -37,7 +37,7 @@ class Game
         puts "Congratultions the code was #{@code_maker.code.join} and you guessed it in #{round} guesses!"
         break
       end
-      guess = @guesser.set_guess(@real_world, round)
+      guess = @guesser.set_guess(round, @real_world)
       print "guess: #{guess.join}  "
       results = @code_maker.evaluate_guess(@guesser.guess, @code_maker.code)
       @rc_rp = results[:rc_rp]
