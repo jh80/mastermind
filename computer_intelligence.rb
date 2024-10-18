@@ -29,4 +29,12 @@ module ComputerIntelligence
     end
     return true
   end
+
+  def generate_first_guess(code_length, code_colors)
+    quantity = code_length/2
+    colors = code_colors.sample(2)
+    code = Array.new(quantity, colors[0]) + Array.new(quantity, colors[1])
+    return code + [color[1]] if code_length.odd?
+    return code
+  end
 end
