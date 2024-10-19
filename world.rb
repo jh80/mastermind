@@ -1,11 +1,13 @@
 class World
   # TO DO attr reader for testing!
-  attr_accessor :rules, :available_colors_collection, :the_colors , :all_colors, :all_codes
+  attr_accessor :rules, :available_colors_collection, :the_colors , :all_colors, :all_codes, :viable_codes
 
+  attr_reader :code_length
   def initialize
     @all_colors = ["R", "Y", "G", "U", "B", "W"]
     @code_length = 4
     @all_codes = create_all_codes_list(@code_length, @all_colors)
+    @viable_codes = @all_codes
     @available_colors_collection = Array.new(4, @all_colors)
     @rules = []
     @the_colors = false

@@ -51,4 +51,7 @@ module ComputerIntelligence
     world.viable_codes = viable_codes
   end
 
+  def generate_guess_from_viable_codes(viable_codes)
+    viable_codes[0]
+  end
 end
