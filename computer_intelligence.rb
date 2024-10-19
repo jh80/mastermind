@@ -1,4 +1,8 @@
+require './checks.rb'
+
 module ComputerIntelligence
+  include Checks
+  
   def generate_code(code_length)
     code = []
     all_colors = ["R", "Y", "G", "U", "W", "B"]
