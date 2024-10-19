@@ -37,9 +37,9 @@ module Checks
   end 
 
 
-  def evaluate_guess(guess)
-    rc_rp_indexes = find_rc_rp_indexes(@code, guess)
-    filtered_code = remove_elements_by_indexes(@code, rc_rp_indexes)
+  def evaluate_guess(guess, code)
+    rc_rp_indexes = find_rc_rp_indexes(code, guess)
+    filtered_code = remove_elements_by_indexes(code, rc_rp_indexes)
     filtered_guess = remove_elements_by_indexes(guess, rc_rp_indexes)
     rc_rp_count = calculate_rp_rc_count(guess, filtered_guess)
     rc_wp_count = count_rc_wp(filtered_code, filtered_guess)

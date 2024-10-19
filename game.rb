@@ -41,7 +41,7 @@ class Game
       end
       guess = @guesser.set_guess(@real_world, round)
       print "guess: #{guess.join}  "
-      results = @code_maker.evaluate_guess(@guesser.guess)
+      results = @code_maker.evaluate_guess(@guesser.guess, @code_maker.code)
       @rc_rp = results[:rc_rp]
       @real_world.add_rule(guess, results[:rc_rp], results[:rc_wp])
       @real_world.process_results(@real_world.rules[-1])
