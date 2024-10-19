@@ -41,4 +41,14 @@ module ComputerIntelligence
     return code + [color[1]] if code_length.odd?
     return code
   end
+
+  def update_viable_codes(world)
+    viable_codes = world.viable_codes
+    viable_codes = viable_codes.select do |code|
+      code_results = evaluate_guess(world.rules[-1][:guess], code)
+      code_results[:rc_rp] == world.rules[-1][:rc_rp] && code_results[:rc_wp] == world.rules[-1][:rc_wp]
+    end
+    world.viable_codes = viable_codes
+  end
+
 end
