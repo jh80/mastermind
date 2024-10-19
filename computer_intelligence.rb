@@ -2,7 +2,7 @@ require './checks.rb'
 
 module ComputerIntelligence
   include Checks
-  
+
   def generate_code(code_length)
     code = []
     all_colors = ["R", "Y", "G", "U", "W", "B"]
@@ -34,7 +34,7 @@ module ComputerIntelligence
     return true
   end
 
-  def generate_first_guess(code_length, code_colors)
+  def generate_first_guess(code_colors, code_length = 4)
     quantity = code_length/2
     colors = code_colors.sample(2)
     code = Array.new(quantity, colors[0]) + Array.new(quantity, colors[1])
