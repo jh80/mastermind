@@ -26,8 +26,12 @@ class Guesser
     guess
   end
 
-  def set_guess(world)
-    @guess = @guesser_type == "human" ? format_string(get_guess) : generate_code_from_color_lib(world) 
+  def set_guess(world, round)
+    if @guesser_type == "human" 
+      @guess = endformat_string(get_guess)
+    else 
+      @guess = round == 0 ? generate_first_guess(world.all_colors) : generate_code_from_color_lib(world) 
+    end
   end
 
   def set_guesser_type
