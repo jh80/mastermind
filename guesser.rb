@@ -40,6 +40,7 @@ class Guesser
   end
 
   def set_guesser_difficulty
+    return if @guesser_type == "human"
     @guesser_difficulty  = get_difficulty_level
   end
 
