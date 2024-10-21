@@ -73,6 +73,15 @@ class World
     end
     @viable_codes = viable_codes
   end
+
+  def update_intel(guess, results, guesser_difficulty)
+    add_rule(guess, results[:rc_rp], results[:rc_wp])
+    if guesser_difficulty == "hard"
+      update_viable_codes
+    else
+      process_results(rules[-1])
+    end
+  end
 end
 
 

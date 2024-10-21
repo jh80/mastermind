@@ -9,7 +9,7 @@ class Guesser
   include Inputable
   include ComputerIntelligence
 
-  attr_reader :guess
+  attr_reader :guess, :guesser_difficulty
   def initialize 
     @guess_string = ""
     @guess = []
