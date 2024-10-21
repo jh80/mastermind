@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 require './user_compliance'
 
+# This class holds the different elements of a game
+# and dictates the order they effect eachother
 class Game
   include UserCompliance
 
@@ -10,16 +14,16 @@ class Game
     @code_maker = CodeMaker.new
     @real_world = World.new
     @rc_rp = 0
-    @guess_max = 10000
+    @guess_max = 10_000
   end
 
   def give_instructions
     puts <<~RUBY
       Welcome to mastermind!
-      In this game you will be asked to guess a 4 letter code 
+      In this game you will be asked to guess a 4 letter code#{' '}
       using the letters R Y G U B W. Letters may be repeated.
       Enter your guess with no spaces.
-      
+
       After you enter your guess you will get back a "hint."
       The hint will be a combination of r's and w's. You will
       get an r for every correct letter in the correct place
@@ -43,7 +47,7 @@ class Game
       @rc_rp = results[:rc_rp]
       @code_maker.print_hint(results[:rc_rp], results[:rc_wp])
       @real_world.update_intel(guess, results, @guesser.guesser_difficulty)
-      puts "Sorry, you ran out of guesses" if round == @guess_max - 1
+      puts 'Sorry, you ran out of guesses' if round == @guess_max - 1
     end
   end
 

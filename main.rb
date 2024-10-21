@@ -1,13 +1,14 @@
-require 'pry-byebug'
-require './guesser.rb'
-require './code_maker.rb'
-require './checks.rb'
-require './game.rb'
-require './world.rb'
+# frozen_string_literal: true
 
+require 'pry-byebug'
+require './guesser'
+require './code_maker'
+require './checks'
+require './game'
+require './world'
 
 game = Game.new
-real_world = World.new
+World.new
 
 game.play
 
