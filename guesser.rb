@@ -14,6 +14,7 @@ class Guesser
     @guess_string = ""
     @guess = []
     @guesser_type = false
+    @guesser_difficulty = false
   end 
 
   def get_guess
@@ -36,5 +37,9 @@ class Guesser
 
   def set_guesser_type
     @guesser_type = get_player_type("Who will be guessing? Human or computer?")
+  end
+
+  def set_guesser_difficulty
+    @guesser_difficulty  = get_difficulty_level
   end
 end

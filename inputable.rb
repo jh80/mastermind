@@ -8,4 +8,14 @@ module Inputable
     end 
     player_type
   end
+
+  def get_difficulty_level
+    difficulty = "none"
+    loop do
+      puts "What difficulty would you like? Hard or regular?"
+      difficulty = gets.chomp.downcase
+      break unless !difficulty_valid?(difficulty)
+    end
+    difficulty
+  end
 end

@@ -28,6 +28,15 @@ module UserCompliance
     end
   end
 
+  # TO DO I can universalize player_type_valid? to check for this instead
+  def difficulty_valid?(difficulty)
+    if difficulty == "hard" || difficulty == "regular"
+      return true 
+    else
+      puts "You must choose hard or regular"
+    end
+  end
+
   def format_string(user_string)
     user_string.upcase.split("")
   end

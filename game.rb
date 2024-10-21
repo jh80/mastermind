@@ -54,5 +54,7 @@ class Game
     give_instructions
     code_maker.set_code
     @guesser.set_guesser_type
+    @guesser.set_guesser_difficulty
+    binding.pry
   end
 end
