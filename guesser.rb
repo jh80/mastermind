@@ -31,7 +31,7 @@ class Guesser
     if @guesser_type == "human" 
       @guess = format_string(get_guess)
     else 
-      @guess = computer_guess_standard(world)
+      @guess = computer_guess(@guesser_difficulty, round, world) 
     end
   end
 
@@ -41,5 +41,13 @@ class Guesser
 
   def set_guesser_difficulty
     @guesser_difficulty  = get_difficulty_level
+  end
+
+  def computer_guess(difficulty, round, world)
+    if difficulty == "hard"
+      computer_guess_hard(round, world)
+    else
+      computer_guess_standard(world)
+    end
   end
 end
