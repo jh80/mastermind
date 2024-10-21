@@ -31,9 +31,7 @@ class Game
   end
 
   def play
-    give_instructions
-    code_maker.set_code
-    @guesser.set_guesser_type
+    game_set_up
     @guess_max.times do |round|
       if @rc_rp == @code_maker.code.length
         puts "Congratultions the code was #{@code_maker.code.join} and you guessed it in #{round} guesses!"
@@ -49,5 +47,11 @@ class Game
       print "Options left: #{@real_world.viable_codes}\n\n"
       puts "Sorry, you ran out of guesses" if round == @guess_max - 1
     end
+  end
+
+  def game_set_up
+    give_instructions
+    code_maker.set_code
+    @guesser.set_guesser_type
   end
 end
