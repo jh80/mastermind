@@ -1,4 +1,7 @@
+require './checks.rb'
+
 class World
+  include Checks
   # TO DO attr reader for testing!
   attr_accessor :rules, :available_colors_collection, :the_colors , :all_colors, :all_codes, :viable_codes
 
@@ -61,6 +64,14 @@ class World
       end
     end
     code_possibilities
+  end
+
+  def update_viable_codes
+    viable_codes = @viable_codes.select do |code|
+      code_results = evaluate_guess(@rules[-1][:guess], code)
+      code_results[:rc_rp] == @rules[-1][:rc_rp] && code_results[:rc_wp] == @rules[-1][:rc_wp]
+    end
+    @viable_codes = viable_codes
   end
 end
 
