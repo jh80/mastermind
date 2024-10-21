@@ -51,8 +51,8 @@ module ComputerIntelligence
     generate_guess_from_viable_codes(world.viable_codes)
   end
 
-  def computer_guess_standard(world)
-    generate_code_from_color_lib(world)
+  def computer_guess_standard(round, world)
+    generate_code_color_system(round, world)
   end
 
   def generate_code_color_system(round, world)

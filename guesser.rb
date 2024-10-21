@@ -47,7 +47,7 @@ class Guesser
     if difficulty == "hard"
       computer_guess_hard(round, world)
     else
-      computer_guess_standard(world)
+      computer_guess_standard(round, world)
     end
   end
 end
