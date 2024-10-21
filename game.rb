@@ -43,6 +43,7 @@ class Game
       @rc_rp = results[:rc_rp]
       @code_maker.print_hint(results[:rc_rp], results[:rc_wp])
       @real_world.add_rule(guess, results[:rc_rp], results[:rc_wp])
+      @real_world.process_results(@real_world.rules[-1])
       @real_world.update_viable_codes
       print "Options left: #{@real_world.viable_codes}\n\n"
       puts "Sorry, you ran out of guesses" if round == @guess_max - 1

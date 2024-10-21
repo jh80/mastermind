@@ -30,7 +30,7 @@ class Guesser
     if @guesser_type == "human" 
       @guess = format_string(get_guess)
     else 
-      @guess = computer_guess_hard(round, world)
+      @guess = computer_guess_standard(world)
     end
   end
 
