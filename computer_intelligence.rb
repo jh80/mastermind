@@ -54,4 +54,9 @@ module ComputerIntelligence
   def generate_guess_from_viable_codes(viable_codes)
     viable_codes[0]
   end
+
+  def computer_guess_hard(round, world)
+    return generate_first_guess(world.all_colors) if round == 0
+    generate_guess_from_viable_codes(world.viable_codes)
+  end
 end

@@ -30,7 +30,7 @@ class Guesser
     if @guesser_type == "human" 
       @guess = format_string(get_guess)
     else 
-      @guess = round == 0 ? generate_first_guess(world.all_colors) : generate_guess_from_viable_codes(world.viable_codes)
+      @guess = computer_guess_hard(round, world)
     end
   end
 
