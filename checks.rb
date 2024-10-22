@@ -27,7 +27,7 @@ module Checks
     all_colors.reduce(0) do |rc_wp_count, color|
       code_count = filtered_code.count(color)
       guess_count = filtered_guess.count(color)
-      rc_wp_count += code_count >= guess_count ? guess_count : code_count
+      rc_wp_count + (code_count >= guess_count ? guess_count : code_count)
     end
   end
 
